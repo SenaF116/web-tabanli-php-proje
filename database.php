@@ -1,5 +1,5 @@
 <?php
-// Hata raporlama (sadece geliştirme ortamında)
+
 if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' || $_SERVER['REMOTE_ADDR'] == '::1') {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
@@ -29,7 +29,7 @@ try {
         ]
     );
 } catch(PDOException $e) {
-    // Güvenli hata mesajı
+   
     error_log("Veritabanı bağlantı hatası: " . $e->getMessage());
     die("Sistem şu anda mevcut değil. Lütfen daha sonra tekrar deneyin.");
 }
