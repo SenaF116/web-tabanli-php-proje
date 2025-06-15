@@ -114,18 +114,4 @@ Speak It Kurs, Bursa merkezli bir dil eğitim merkezi için tasarlanan kurumsal 
 - Test senaryoları
 - Geliştirme planı
 
-## İletişim
-Projenin geliştiricisi ile iletişime geçmek için:
-- E-posta: developer@example.com
-- Web: www.speakitkurs.com
 
-## Lisans
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylı bilgi için LICENSE dosyasını inceleyin.
-
-## Ekran Görüntüleri
-![Ana Sayfa](screenshots/home.png)
-![Admin Paneli](screenshots/admin.png)
-![Öğrenci Paneli](screenshots/student.png)
-
-## Video Demo
-[YouTube Video Link](https://youtube.com/your-video-id)
