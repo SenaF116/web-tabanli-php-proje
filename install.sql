@@ -1,15 +1,13 @@
--- Tabloları oluşturma (Veritabanı zaten oluşturulmuş olacak);
 
--- Kullanıcı tipleri tablosu
 CREATE TABLE IF NOT EXISTS user_types (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL
 );
 
--- Kullanıcı tiplerini ekle
+
 INSERT INTO user_types (name) VALUES ('admin'), ('teacher'), ('student');
 
--- Kullanıcılar tablosu
+
 CREATE TABLE IF NOT EXISTS users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_type_id INT,
@@ -23,33 +21,30 @@ CREATE TABLE IF NOT EXISTS users (
     FOREIGN KEY (user_type_id) REFERENCES user_types(id)
 );
 
--- Diller tablosu
+
 CREATE TABLE IF NOT EXISTS languages (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     code VARCHAR(10) NOT NULL
 );
 
--- Dilleri ekle
+
 INSERT INTO languages (name, code) VALUES 
 ('İngilizce', 'en'),
 ('Fransızca', 'fr'),
 ('İspanyolca', 'es');
 
--- Ders seviyeleri tablosu
 CREATE TABLE IF NOT EXISTS levels (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     description TEXT
 );
 
--- Ders seviyelerini ekle
 INSERT INTO levels (name, description) VALUES 
 ('Başlangıç', 'Temel dil bilgisi'),
 ('Orta', 'Gelişmiş dil bilgisi'),
 ('İleri', 'Uzman dil bilgisi');
 
--- Dersler tablosu
 CREATE TABLE IF NOT EXISTS courses (
     id INT PRIMARY KEY AUTO_INCREMENT,
     language_id INT,
@@ -66,7 +61,7 @@ CREATE TABLE IF NOT EXISTS courses (
     FOREIGN KEY (teacher_id) REFERENCES users(id)
 );
 
--- Öğrenci detayları tablosu
+
 CREATE TABLE IF NOT EXISTS student_details (
     id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
@@ -75,7 +70,7 @@ CREATE TABLE IF NOT EXISTS student_details (
     FOREIGN KEY (student_id) REFERENCES users(id)
 );
 
--- Eğitmen detayları tablosu
+
 CREATE TABLE IF NOT EXISTS teacher_details (
     id INT PRIMARY KEY AUTO_INCREMENT,
     teacher_id INT,
@@ -85,7 +80,7 @@ CREATE TABLE IF NOT EXISTS teacher_details (
     FOREIGN KEY (teacher_id) REFERENCES users(id)
 );
 
--- Öğrenci kayıtları tablosu
+
 CREATE TABLE IF NOT EXISTS student_registrations (
     id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
@@ -96,7 +91,7 @@ CREATE TABLE IF NOT EXISTS student_registrations (
     FOREIGN KEY (course_id) REFERENCES courses(id)
 );
 
--- Sınavlar tablosu
+
 CREATE TABLE IF NOT EXISTS exams (
     id INT PRIMARY KEY AUTO_INCREMENT,
     course_id INT,
@@ -107,7 +102,7 @@ CREATE TABLE IF NOT EXISTS exams (
     FOREIGN KEY (course_id) REFERENCES courses(id)
 );
 
--- Sınav sonuçları tablosu
+
 CREATE TABLE exam_results (
     id INT PRIMARY KEY AUTO_INCREMENT,
     exam_id INT,
@@ -118,7 +113,7 @@ CREATE TABLE exam_results (
     FOREIGN KEY (student_id) REFERENCES users(id)
 );
 
--- Ödeme kayıtları tablosu
+
 CREATE TABLE IF NOT EXISTS payments (
     id INT PRIMARY KEY AUTO_INCREMENT,
     registration_id INT,
@@ -128,7 +123,7 @@ CREATE TABLE IF NOT EXISTS payments (
     FOREIGN KEY (registration_id) REFERENCES student_registrations(id)
 );
 
--- Sınav sonuçları tablosu
+
 CREATE TABLE exam_results (
     id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
@@ -139,7 +134,7 @@ CREATE TABLE exam_results (
     FOREIGN KEY (course_id) REFERENCES courses(id)
 );
 
--- Admin hesap oluşturma
+
 INSERT INTO users (user_type_id, username, password, name, surname, email) 
 VALUES (1, 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Admin', 'Admin', 'admin@speakitkurs.com');
 
