@@ -76,7 +76,6 @@ function getUserType() {
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="images/english.jpg" class="card-img-top" alt="İngilizce">
                             <div class="card-body">
                                 <h5 class="card-title">İngilizce</h5>
                                 <p class="card-text">Profesyonel İngilizce eğitimi</p>
@@ -86,7 +85,6 @@ function getUserType() {
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="images/french.jpg" class="card-img-top" alt="Fransızca">
                             <div class="card-body">
                                 <h5 class="card-title">Fransızca</h5>
                                 <p class="card-text">Profesyonel Fransızca eğitimi</p>
@@ -96,7 +94,6 @@ function getUserType() {
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="images/spanish.jpg" class="card-img-top" alt="İspanyolca">
                             <div class="card-body">
                                 <h5 class="card-title">İspanyolca</h5>
                                 <p class="card-text">Profesyonel İspanyolca eğitimi</p>
@@ -119,3 +116,4 @@ function getUserType() {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
